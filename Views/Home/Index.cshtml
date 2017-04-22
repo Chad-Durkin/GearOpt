@@ -1,0 +1,20 @@
+﻿@model IEnumerable<GearOptimizer.Model.Boss>
+
+@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    <h1>Boss List</h1>
+</div>
+
+@if(Model.Any())
+{
+    <ul>
+        @foreach(var boss in Model)
+        {
+            <li>@Html.DisplayFor(modelName => boss.Name)</li>
+        }
+    </ul>
+}

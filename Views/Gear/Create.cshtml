@@ -1,0 +1,73 @@
+﻿@model GearOptimizer.Model.Gear
+
+@{
+    ViewData["Title"] = "Add Gear";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    <h2>Add Gear</h2>
+</div>
+
+@using (Html.BeginForm())
+{
+
+    @Html.LabelFor(model => model.Slot)
+    @Html.TextBoxFor(model => model.Slot)
+
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+
+    @Html.LabelFor(model => model.Price)
+    @Html.TextBoxFor(model => model.Price, null, new { type="number"})
+
+    @Html.LabelFor(model => model.AtkStab)
+    @Html.TextBoxFor(model => model.AtkStab, null, new { type = "number" })
+
+    @Html.LabelFor(model => model.AtkSlash)
+    @Html.TextBoxFor(model => model.AtkSlash, null, new { type = "number" })
+
+    @Html.LabelFor(model => model.AtkCrush)
+    @Html.TextBoxFor(model => model.AtkCrush, null, new { type = "number" })
+
+    @Html.LabelFor(model => model.AtkMagic)
+    @Html.TextBoxFor(model => model.AtkMagic, null, new { type = "number" })
+
+    @Html.LabelFor(model => model.AtkRange)
+    @Html.TextBoxFor(model => model.AtkRange, null, new { type = "number" })
+
+    @Html.LabelFor(model => model.DefStab)
+    @Html.TextBoxFor(model => model.DefStab, null, new { type = "number" })
+
+    @Html.LabelFor(model => model.DefSlash)
+    @Html.TextBoxFor(model => model.DefSlash, null, new { type = "number" })
+
+    @Html.LabelFor(model => model.DefCrush)
+    @Html.TextBoxFor(model => model.DefCrush, null, new { type = "number" })
+
+    @Html.LabelFor(model => model.DefMagic)
+    @Html.TextBoxFor(model => model.DefMagic, null, new { type = "number" })
+
+    @Html.LabelFor(model => model.DefRange)
+    @Html.TextBoxFor(model => model.DefRange, null, new { type = "number" })
+
+    @Html.LabelFor(model => model.MeleeStr)
+    @Html.TextBoxFor(model => model.MeleeStr, null, new { type = "number" })
+
+    @Html.LabelFor(model => model.RangeStr)
+    @Html.TextBoxFor(model => model.RangeStr, null, new { type = "number" })
+
+    @Html.LabelFor(model => model.MagicDmg)
+    @Html.TextBoxFor(model => model.MagicDmg, null, new { type = "number" })
+
+    @Html.LabelFor(model => model.Prayer)
+    @Html.TextBoxFor(model => model.Prayer, null, new { type = "number" })
+
+    @Html.LabelFor(model => model.Undead)
+    @Html.TextBoxFor(model => model.Undead, null, new { type = "number" })
+
+    @Html.LabelFor(model => model.Slayer)
+    @Html.TextBoxFor(model => model.Slayer, null, new { type = "number" })
+
+    <input type="submit" value="Add new gear" />
+}

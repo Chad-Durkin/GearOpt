@@ -1,0 +1,134 @@
+﻿@model IEnumerable<GearOptimizer.Model.Gear>
+
+@{
+    ViewData["Title"] = "Gear List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    <h1>Gear List</h1>
+</div>
+
+@if (Model.Any())
+{
+    <h3>Head Slot</h3>
+    <ul>
+        @foreach (var gear in Model)
+        {
+            @if (gear.Slot == "HeadSlot")
+            {
+                <li>@Html.DisplayFor(modelName => gear.Name)</li>
+            }
+        }
+    </ul>
+
+    <h3>Chest Slot</h3>
+    <ul>
+        @foreach (var gear in Model)
+        {
+            @if (gear.Slot == "ChestSlot")
+            {
+                <li>@Html.DisplayFor(modelName => gear.Name)</li>
+            }
+        }
+    </ul>
+
+    <h3>Leg Slot</h3>
+    <ul>
+        @foreach (var gear in Model)
+        {
+            @if (gear.Slot == "LegSlot")
+            {
+                <li>@Html.DisplayFor(modelName => gear.Name)</li>
+            }
+        }
+    </ul>
+
+    <h3>Boots</h3>
+    <ul>
+        @foreach (var gear in Model)
+        {
+            @if (gear.Slot == "Boots")
+            {
+                <li>@Html.DisplayFor(modelName => gear.Name)</li>
+            }
+        }
+    </ul>
+
+    <h3>Gloves</h3>
+    <ul>
+        @foreach (var gear in Model)
+        {
+            @if (gear.Slot == "Gloves")
+            {
+                <li>@Html.DisplayFor(modelName => gear.Name)</li>
+            }
+        }
+    </ul>
+
+    <h3>Cape</h3>
+    <ul>
+        @foreach (var gear in Model)
+        {
+            @if (gear.Slot == "Cope")
+            {
+                <li>@Html.DisplayFor(modelName => gear.Name)</li>
+            }
+        }
+    </ul>
+
+    <h3>Necklace</h3>
+    <ul>
+        @foreach (var gear in Model)
+        {
+            @if (gear.Slot == "Necklace")
+            {
+                <li>@Html.DisplayFor(modelName => gear.Name)</li>
+            }
+        }
+    </ul>
+
+    <h3>Ring</h3>
+    <ul>
+        @foreach (var gear in Model)
+        {
+            @if (gear.Slot == "Ring")
+            {
+                <li>@Html.DisplayFor(modelName => gear.Name)</li>
+            }
+        }
+    </ul>
+
+    <h3>Main Hand</h3>
+    <ul>
+        @foreach (var gear in Model)
+        {
+            @if (gear.Slot == "MainHand")
+            {
+                <li>@Html.DisplayFor(modelName => gear.Name)</li>
+            }
+        }
+    </ul>
+
+    <h3>Off Hand</h3>
+    <ul>
+        @foreach (var gear in Model)
+        {
+            @if (gear.Slot == "OffHand")
+            {
+                <li>@Html.DisplayFor(modelName => gear.Name)</li>
+            }
+        }
+    </ul>
+
+    <h3>Arrow Slot</h3>
+    <ul>
+        @foreach (var gear in Model)
+        {
+            @if (gear.Slot == "ArrowSlot")
+            {
+                <li>@Html.DisplayFor(modelName => gear.Name)</li>
+            }
+        }
+    </ul>
+}
