@@ -31,5 +31,17 @@ namespace GearOptimizer.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public IActionResult Edit(int id)
+        {
+            var thisGear = db.Gears.FirstOrDefault(gear => gear.Id == id);
+            return View(thisGear);
+        }
+        [HttpPost]
+        public IActionResult Edit(Gear editedGear)
+        {
+            db.Entry(editedGear).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

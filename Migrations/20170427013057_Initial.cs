@@ -13,7 +13,7 @@ namespace GearOptimizer.Migrations
                 name: "Bosses",
                 columns: table => new
                 {
-                    BossId = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     AtkStyle = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
@@ -21,28 +21,28 @@ namespace GearOptimizer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Bosses", x => x.BossId);
+                    table.PrimaryKey("PK_Bosses", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Drops",
                 columns: table => new
                 {
-                    DropId = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
                     Value = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Drops", x => x.DropId);
+                    table.PrimaryKey("PK_Drops", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Gears",
                 columns: table => new
                 {
-                    GearId = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     AtkCrush = table.Column<int>(nullable: false),
                     AtkMagic = table.Column<int>(nullable: false),
@@ -60,13 +60,14 @@ namespace GearOptimizer.Migrations
                     Prayer = table.Column<int>(nullable: false),
                     Price = table.Column<int>(nullable: false),
                     RangeStr = table.Column<int>(nullable: false),
+                    Reqs = table.Column<string>(nullable: true),
                     Slayer = table.Column<int>(nullable: false),
                     Slot = table.Column<string>(nullable: true),
                     Undead = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Gears", x => x.GearId);
+                    table.PrimaryKey("PK_Gears", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -83,13 +84,13 @@ namespace GearOptimizer.Migrations
                         name: "FK_BossDrops_Bosses_BossId",
                         column: x => x.BossId,
                         principalTable: "Bosses",
-                        principalColumn: "BossId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_BossDrops_Drops_DropId",
                         column: x => x.DropId,
                         principalTable: "Drops",
-                        principalColumn: "DropId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -97,7 +98,8 @@ namespace GearOptimizer.Migrations
                 name: "FullSets",
                 columns: table => new
                 {
-                    SetType = table.Column<string>(nullable: false),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     ArrowSlotId = table.Column<int>(nullable: false),
                     BootsId = table.Column<int>(nullable: false),
                     BossId = table.Column<int>(nullable: false),
@@ -111,22 +113,23 @@ namespace GearOptimizer.Migrations
                     MainHandId = table.Column<int>(nullable: false),
                     NecklaceId = table.Column<int>(nullable: false),
                     OffHandId = table.Column<int>(nullable: false),
-                    RingId = table.Column<int>(nullable: false)
+                    RingId = table.Column<int>(nullable: false),
+                    SetName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FullSets", x => x.SetType);
+                    table.PrimaryKey("PK_FullSets", x => x.Id);
                     table.ForeignKey(
                         name: "FK_FullSets_Bosses_BossId",
                         column: x => x.BossId,
                         principalTable: "Bosses",
-                        principalColumn: "BossId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_FullSets_Gears_GearId",
                         column: x => x.GearId,
                         principalTable: "Gears",
-                        principalColumn: "GearId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 

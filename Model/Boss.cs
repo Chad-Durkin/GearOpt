@@ -11,7 +11,7 @@ namespace GearOptimizer.Model
     public class Boss
     {
         [Key]
-        public int BossId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Weakness { get; set; }
         public string AtkStyle { get; set; }

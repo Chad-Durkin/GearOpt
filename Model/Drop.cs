@@ -10,7 +10,7 @@ namespace GearOptimizer.Model
     [Table("Drops")]
     public class Drop
     {
-        public int DropId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public int Value { get; set; }
         public virtual ICollection<BossDrops> BossDrops { get; set; }

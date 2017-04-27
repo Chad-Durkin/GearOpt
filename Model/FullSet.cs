@@ -11,7 +11,8 @@ namespace GearOptimizer.Model
     public class FullSet
     {
         [Key]
-        public string SetType { get; set; }
+        public int Id { get; set; }
+        public string SetName { get; set; }
         public int FullSetId { get; set; }
         public int HeadSlotId { get; set; }
         public int ChestSlotId { get; set; }

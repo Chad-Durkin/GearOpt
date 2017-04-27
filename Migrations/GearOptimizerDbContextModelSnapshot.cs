@@ -18,7 +18,7 @@ namespace GearOptimizer.Migrations
 
             modelBuilder.Entity("GearOptimizer.Model.Boss", b =>
                 {
-                    b.Property<int>("BossId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("AtkStyle");
@@ -27,7 +27,7 @@ namespace GearOptimizer.Migrations
 
                     b.Property<string>("Weakness");
 
-                    b.HasKey("BossId");
+                    b.HasKey("Id");
 
                     b.ToTable("Bosses");
                 });
@@ -49,21 +49,22 @@ namespace GearOptimizer.Migrations
 
             modelBuilder.Entity("GearOptimizer.Model.Drop", b =>
                 {
-                    b.Property<int>("DropId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Name");
 
                     b.Property<int>("Value");
 
-                    b.HasKey("DropId");
+                    b.HasKey("Id");
 
                     b.ToTable("Drops");
                 });
 
             modelBuilder.Entity("GearOptimizer.Model.FullSet", b =>
                 {
-                    b.Property<string>("SetType");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<int>("ArrowSlotId");
 
@@ -93,7 +94,9 @@ namespace GearOptimizer.Migrations
 
                     b.Property<int>("RingId");
 
-                    b.HasKey("SetType");
+                    b.Property<string>("SetName");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("BossId");
 
@@ -104,7 +107,7 @@ namespace GearOptimizer.Migrations
 
             modelBuilder.Entity("GearOptimizer.Model.Gear", b =>
                 {
-                    b.Property<int>("GearId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("AtkCrush");
@@ -139,13 +142,15 @@ namespace GearOptimizer.Migrations
 
                     b.Property<int>("RangeStr");
 
+                    b.Property<string>("Reqs");
+
                     b.Property<int>("Slayer");
 
                     b.Property<string>("Slot");
 
                     b.Property<int>("Undead");
 
-                    b.HasKey("GearId");
+                    b.HasKey("Id");
 
                     b.ToTable("Gears");
                 });

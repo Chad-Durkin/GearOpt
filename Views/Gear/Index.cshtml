@@ -17,7 +17,7 @@
         {
             @if (gear.Slot == "HeadSlot")
             {
-                <li>@Html.DisplayFor(modelName => gear.Name)</li>
+                <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.GearId })</li>
             }
         }
     </ul>

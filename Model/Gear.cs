@@ -11,9 +11,10 @@ namespace GearOptimizer.Model
     public class Gear
     {
         [Key]
-        public int GearId { get; set; }
+        public int Id { get; set; }
         public string Slot { get; set; }
         public string Name { get; set; }
+        public string Reqs { get; set; }
         public int Price { get; set; }
         public int AtkStab { get; set; }
         public int AtkSlash { get; set; }
