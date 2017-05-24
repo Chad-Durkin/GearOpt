@@ -8,16 +8,15 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using GearOptimizer.Model;
+using Microsoft.EntityFrameworkCore;
+using GearOptimizer.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace GearOptimizer
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public IConfigurationRoot Configuration { get; set; }
         public Startup(IHostingEnvironment env)
         {
@@ -26,35 +25,39 @@ namespace GearOptimizer
                 .AddJsonFile("appsettings.json");
             Configuration = builder.Build();
         }
+        // This method gets called by the runtime. Use this method to add services to the container.
+        // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
             services.AddEntityFramework()
                 .AddDbContext<GearOptimizerDbContext>(options =>
                     options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<GearOptimizerDbContext>()
+                .AddDefaultTokenProviders();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole();
             app.UseStaticFiles();
+            loggerFactory.AddConsole();
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            app.UseIdentity();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-
-            if (env.IsDevelopment())
+            app.Run(async (error) =>
             {
-                app.UseDeveloperExceptionPage();
-            }
-
-
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Loading page....");
+                await error.Response.WriteAsync("You should not see this message. An error has occured.");
             });
         }
     }

@@ -1,4 +1,4 @@
-﻿@model GearOptimizer.Model.Gear
+﻿@model GearOptimizer.Models.Gear
 
 @{
     ViewData["Title"] = "Edit Gear";
@@ -9,6 +9,7 @@
 
 @using (Html.BeginForm())
 {
+    @Html.HiddenFor(m => m.Id)
 
     @Html.LabelFor(model => model.Slot)
     @Html.TextBoxFor(model => model.Slot)

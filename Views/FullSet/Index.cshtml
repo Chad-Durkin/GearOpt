@@ -1,0 +1,63 @@
+﻿@*@model IEnumerable<GearOptimizer.Models.FullSet>*@
+@model GearOptimizer.ViewModels.FullSetViewModel
+@{ 
+    ViewData["Title"] = "Full Sets";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    <h1>Full Set List</h1>
+</div>
+
+<ul>
+    @foreach (var fullset in Model.FullSets)
+    {
+        <h2><strong>@fullset.SetName</strong></h2>
+        <p>@Html.ActionLink("Edit", "Edit", "FullSet", new { id = fullset.Id }) | @Html.ActionLink("Delete", "Delete", "FullSet", new { id = fullset.Id }) | @Html.ActionLink("Details", "Details", "FullSet", new { id = fullset.Id })</p>
+        <h3><strong>Bosses</strong></h3>
+        <ul>
+            @foreach (var bossFS in Model.FullSetBosses)
+            {
+                @foreach (var boss in Model.Bosses)
+                {
+                    if (bossFS.BossId == boss.Id && bossFS.FullSetId == fullset.Id)
+                    {
+                        <li>@boss.Name | @Html.ActionLink("Edit", "Edit", "Boss", new { id = boss.Id }) | @Html.ActionLink("Delete", "Delete", "Boss", new { id = boss.Id }) | @Html.ActionLink("Details", "Details", "Boss", new { id = boss.Id })</li>
+                    }
+                }
+            }
+        </ul>
+
+        <h3><strong>Profiles</strong></h3>
+        <ul>
+            @foreach (var profileFS in Model.ProfileFullSets)
+            {
+                @foreach (var profile in Model.Profiles)
+                {
+                    if (profileFS.ProfileId == profile.Id && profileFS.FullSetId == fullset.Id)
+                    {
+                        <li>@profile.Name</li>
+
+                    }
+                }
+            }
+        </ul>
+
+        <h3><strong>Gear</strong></h3>
+        <ul>
+            @foreach (var gearFS in Model.FullSetGears)
+            {
+                @foreach (var gear in Model.Gears)
+                {
+                    if (gearFS.GearId == gear.Id && gearFS.FullSetId == fullset.Id)
+                    {
+                        <li><strong>@gear.Slot</strong></li>
+                        <li>@gear.Name | @Html.ActionLink("Edit", "Edit", "Gear", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", "Gear", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", "Gear", new { id = gear.Id })</li>
+                    }
+                }
+            }
+        </ul>
+    }
+</ul>
+
+<p>@Html.ActionLink("Add FullSet", "Create")</p>

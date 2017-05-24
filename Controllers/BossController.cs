@@ -10,14 +10,14 @@ using Microsoft.AspNetCore.Identity;
 
 namespace GearOptimizer.Controllers
 {
-    public class GearController : Controller
+    public class BossController : Controller
     {
         private IHostingEnvironment _environment;
         private readonly GearOptimizerDbContext _db;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public GearController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, GearOptimizerDbContext db, IHostingEnvironment environment)
+        public BossController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, GearOptimizerDbContext db, IHostingEnvironment environment)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -27,48 +27,48 @@ namespace GearOptimizer.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View(_db.Gears.ToList());
+            return View(_db.Bosses.ToList());
         }
         public IActionResult Create()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult Create(Gear newGear)
+        public IActionResult Create(Boss boss)
         {
-            _db.Gears.Add(newGear);
+            _db.Bosses.Add(boss);
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
         public IActionResult Edit(int id)
         {
-            Gear thisGear = _db.Gears.FirstOrDefault(gear => gear.Id == id);
-            return View(thisGear);
+            var thisBoss = _db.Bosses.FirstOrDefault(boss => boss.Id == id);
+            return View(thisBoss);
         }
         [HttpPost]
-        public IActionResult Edit(Gear editedGear)
+        public IActionResult Edit(Boss editedBoss)
         {
-            _db.Entry(editedGear).State = EntityState.Modified;
+            _db.Entry(editedBoss).State = EntityState.Modified;
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
         public IActionResult Delete(int id)
         {
-            var deleteGear = _db.Gears.FirstOrDefault(gear => gear.Id == id);
-            return View(deleteGear);
+            var deleteBoss = _db.Bosses.FirstOrDefault(boss => boss.Id == id);
+            return View(deleteBoss);
         }
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirmed(int id)
         {
-            var deleteGear = _db.Gears.FirstOrDefault(gear => gear.Id == id);
-            _db.Gears.Remove(deleteGear);
+            var deleteBoss = _db.Bosses.FirstOrDefault(boss => boss.Id == id);
+            _db.Bosses.Remove(deleteBoss);
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
         public IActionResult Details(int id)
         {
-            var gearDetails = _db.Gears.FirstOrDefault(gear => gear.Id == id); ;
-            return View(gearDetails);
+            var bossDetails = _db.Bosses.FirstOrDefault(boss => boss.Id == id);;
+            return View(bossDetails);
         }
     }
 }

@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace GearOptimizer.Model
+namespace GearOptimizer.Models
 {
     [Table("Drops")]
     public class Drop
     {
+        [Key]
         public int Id { get; set; }
         public string Name { get; set; }
         public int Value { get; set; }
-        public virtual ICollection<BossDrops> BossDrops { get; set; }
+        public virtual ICollection<BossDrop> BossDrops { get; set; }
     }
 }

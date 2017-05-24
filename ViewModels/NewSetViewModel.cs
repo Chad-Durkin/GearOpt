@@ -2,18 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using GearOptimizer.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace GearOptimizer.Model
+namespace GearOptimizer.ViewModels
 {
-    [Table("FullSets")]
-    public class FullSet
+    public class NewSetViewModel
     {
-        [Key]
-        public int Id { get; set; }
-        public string SetName { get; set; }
         public int FullSetId { get; set; }
+        public string SetName { get; set; }
         public int HeadSlotId { get; set; }
         public int ChestSlotId { get; set; }
         public int LegSlotId { get; set; }
@@ -22,12 +19,10 @@ namespace GearOptimizer.Model
         public int CapeId { get; set; }
         public int NecklaceId { get; set; }
         public int RingId { get; set; }
+        public int ArrowSlotId { get; set; }
         public int MainHandId { get; set; }
         public int OffHandId { get; set; }
-        public int ArrowSlotId { get; set; }
+        public int SpecWeaponId { get; set; }
         public int BossId { get; set; }
-        public virtual Boss Boss { get; set; }
-
-
     }
 }

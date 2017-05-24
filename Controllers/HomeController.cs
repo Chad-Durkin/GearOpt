@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using GearOptimizer.Model;
-using Microsoft.EntityFrameworkCore;
-using System.Diagnostics;
+﻿using System.Linq;
+using System;
+using GearOptimizer.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using GearOptimizer.ViewModels;
+using System.Collections.Generic;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,11 +13,38 @@ namespace GearOptimizer.Controllers
 {
     public class HomeController : Controller
     {
-        private GearOptimizerDbContext db = new GearOptimizerDbContext();
+        private IHostingEnvironment _environment;
+        private readonly GearOptimizerDbContext _db;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
+
+        public HomeController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, GearOptimizerDbContext db, IHostingEnvironment environment)
+        {
+            _userManager = userManager;
+            _signInManager = signInManager;
+            _db = db;
+            _environment = environment;
+        }
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View(db.Bosses.ToList());
+            return View(_db.Bosses.ToList());
+        }
+        
+        public IActionResult GearSets(int bossId)
+        {
+            FullSetViewModel fullsetInfo = new FullSetViewModel(_db);
+            fullsetInfo.BossId = bossId;
+
+            return Json(fullsetInfo);
+        }
+        public IActionResult GrabJoins()
+        {
+            JoinViewModel joinModel = new JoinViewModel {
+                FullSetBosses = _db.FullSetBosses.ToArray(),
+                FullSetGears = _db.FullSetGears.ToArray()
+            };
+            return Json(joinModel);
         }
     }
 }

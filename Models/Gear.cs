@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace GearOptimizer.Model
+namespace GearOptimizer.Models
 {
     [Table("Gears")]
     public class Gear
@@ -32,6 +29,6 @@ namespace GearOptimizer.Model
         public int Prayer { get; set; }
         public int Undead { get; set; }
         public int Slayer { get; set; }
-        public virtual ICollection<FullSet> FullSets { get; set; }
+        public virtual ICollection<FullSetGear> FullSetGears { get; set; }
     }
 }

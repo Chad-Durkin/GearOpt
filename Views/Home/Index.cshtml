@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GearOptimizer.Model.Boss>
+﻿@model IEnumerable<GearOptimizer.Models.Boss>
 
 @{
     ViewData["Title"] = "Home";
@@ -6,15 +6,83 @@
 }
 
 <div class="jumbotron">
-    <h1>Boss List</h1>
+    <h2>Old School RuneScape Gear Optimizer</h2>
 </div>
 
-@if(Model.Any())
-{
-    <ul>
-        @foreach(var boss in Model)
-        {
-            <li>@Html.DisplayFor(modelName => boss.Name)</li>
-        }
-    </ul>
-}
+<h2>Haven't Signed In? Do so @Html.ActionLink("here", "Index", "Account") and get started!</h2>
+<div class="row">
+
+    @*Side Menu Links*@
+    <div class="col-md-2 sideMenuCol">
+        <div class="sideMenu">
+            <div class="sideMenuLink">
+                <h5 class="bossSideMenu">Bosses</h5>
+            </div>
+            <div class="sideMenuLink">
+                <h5 class="currentPricesSideMenu">Current Prices</h5>
+            </div>
+            <div class="sideMenuLink">
+                <h5 class="savedGearSideMenu">Saved Gear Sets</h5>
+            </div>
+        </div>
+    </div>
+
+    @*Display Content*@
+    <div class="col-md-10 displayCol">
+
+        @*Boss Content*@
+        <div class="bossDisplay">
+            <h1>Current Bosses</h1>
+            <ul class="ulBoss">
+                @foreach (var boss in Model)
+                {
+                    <h3 class="selectBoss" data-request-url="@Url.Action("GearSets", "Home")" id="@boss.Id">@boss.Name</h3>
+                    <h5>Attack Style: @boss.AtkStyle</h5>
+                    <h5>Weakness: @boss.Weakness</h5>
+                }
+            </ul>
+        </div>
+        @*Boss Gear Sets*@
+        <div class="bossGearDisplay">
+            <div class="bossName"></div>
+            <div class="bossGearSets"></div>
+        </div>
+
+        @*Current Prices Content*@
+        <div class="currentPricesDisplay">
+            <h1>Current Prices</h1>
+            <input class="form-control" name="searchQuery" id="searchQuery" placeholder="What item's price do you want to lookup?" />
+            <button id="get-games">Search Item</button>
+            <div class="itemLookup">
+
+            </div>
+        </div>
+
+        @*Saved Gear Content*@
+        <div class="savedGearDisplay">
+            <h1>Saved Gear Sets</h1>
+            <div class="savedGear">
+
+            </div>
+        </div>
+
+
+    </div>
+</div>'
+@*Main Menu*@
+<div class="row homeMenuRow">
+    <div class="col-md-12">
+        @*Main Menu Links*@
+        <div class="mainMenu">
+            <div class="mainMenuLink">
+                <h1 class="bossMainMenu">Bosses</h1>
+            </div>
+            <div class="mainMenuLink">
+                <h1 class="currentPricesMainMenu">Current Prices</h1>
+            </div>
+            <div class="mainMenuLink">
+                <h1 class="savedGearMainMenu">Saved Gear Sets</h1>
+            </div>
+        </div>
+    </div>
+</div>

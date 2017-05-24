@@ -1,0 +1,14 @@
+﻿@model GearOptimizer.Models.FullSet
+
+@{
+    ViewData["Title"] = "Delete Boss";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Are you sure you want to delete... @Html.DisplayFor(modelName => Model.SetName)</h2>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(modelName => Model.Id)
+
+    <input type="submit" value="Delete FullSet" />
+}

@@ -1,6 +1,7 @@
-﻿{
+{
   "dependencies": {
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
+    "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0",
     "Microsoft.AspNetCore.Mvc": "1.0.0",
     "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
     "Microsoft.AspNetCore.Server.Kestrel": "1.0.1",
@@ -17,7 +18,9 @@
     "Microsoft.NETCore.App": {
       "version": "1.0.1",
       "type": "platform"
-    }
+    },
+    "Newtonsoft.Json": "10.0.2",
+    "RestSharp.NetCore": "105.2.3"
   },
 
   "tools": {

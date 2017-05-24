@@ -1,0 +1,48 @@
+﻿@model GearOptimizer.Models.Gear
+
+@{ 
+    ViewData["Title"] = "Gear Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>@Html.DisplayFor(model => model.Slot)</h3>
+<br />
+<h3>@Html.DisplayFor(model => model.Name)</h3>
+<br />
+<h2>ATTACK</h2>
+<h3>Price: @Html.DisplayFor(model => model.Price)</h3>
+<br />
+<h3>Stab: @Html.DisplayFor(model => model.AtkStab)</h3>
+<br />
+<h3>Slash: @Html.DisplayFor(model => model.AtkSlash)</h3>
+<br />
+<h3>Crush: @Html.DisplayFor(model => model.AtkCrush)</h3>
+<br />
+<h3>Magic: @Html.DisplayFor(model => model.AtkMagic)</h3>
+<br />
+<h3>Range: @Html.DisplayFor(model => model.AtkRange)</h3>
+<br />
+<h2>DEFENSE</h2>
+<h3>Stab: @Html.DisplayFor(model => model.DefStab)</h3>
+<br />
+<h3>Slash: @Html.DisplayFor(model => model.DefSlash)</h3>
+<br />
+<h3>Crush: @Html.DisplayFor(model => model.DefCrush)</h3>
+<br />
+<h3>Magic: @Html.DisplayFor(model => model.DefMagic)</h3>
+<br />
+<h3>Range: @Html.DisplayFor(model => model.DefRange)</h3>
+<br />
+<h2>OTHER BONUSES</h2>
+<h3>Melee Strength: @Html.DisplayFor(model => model.MeleeStr)</h3>
+<br />
+<h3>Range Strength: @Html.DisplayFor(model => model.RangeStr)</h3>
+<br />
+<h3>Magic Damage: @Html.DisplayFor(model => model.MagicDmg)</h3>
+<br />
+<h3>Prayer Bonus: @Html.DisplayFor(model => model.Prayer)</h3>
+<br />
+<h2>TARGET-SPECIFIC</h2>
+<h3>Undead Bonus: @Html.DisplayFor(model => model.Undead)</h3>
+<br />
+<h3>Slayer Bonus:@Html.DisplayFor(model => model.Slayer)</h3>

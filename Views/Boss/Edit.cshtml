@@ -1,5 +1,30 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model GearOptimizer.Models.Boss
+
 @{
+    ViewData["Title"] = "Add Boss";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Editing Boss... @Html.DisplayFor(model => model.Name)</h2>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.Id)
+
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+
+    @Html.LabelFor(model => model.Weakness)
+    @Html.TextBoxFor(model => model.Weakness)
+
+    @Html.LabelFor(model => model.AtkStyle)
+    @Html.TextBoxFor(model => model.AtkStyle)
+
+
+    @Html.LabelFor(model => model.Notes)
+    @Html.TextBoxFor(model => model.Notes)
+
+    @Html.LabelFor(model => model.PopGroupSize)
+    @Html.TextBoxFor(model => model.PopGroupSize)
+
+    <input type="submit" value="Save Boss" />
 }

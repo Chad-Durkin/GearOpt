@@ -1,2 +1,43 @@
 ﻿body {
+    background-image: url('/../img/fan_art.jpg');
+}
+
+.jumbotron {
+    text-align: center;
+}
+
+.mainMenu {
+    text-align: center;
+}
+
+.sideMenuCol {
+    display: none;
+}
+
+.displayCol {
+    text-align: center;
+}
+
+.bossDisplay {
+    display: none;
+}
+
+.bossGearSets {
+    display: none;
+}
+
+.currentPricesDisplay {
+    display: none;
+}
+
+.savedGearDisplay {
+    display: none;
+}
+
+.ulBoss {
+    list-style-type: none;
+}
+
+.bossGearSets {
+    display: none;
 }

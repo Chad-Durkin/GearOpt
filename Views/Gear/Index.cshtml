@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GearOptimizer.Model.Gear>
+﻿@model IEnumerable<GearOptimizer.Models.Gear>
 
 @{
     ViewData["Title"] = "Gear List";
@@ -17,7 +17,7 @@
         {
             @if (gear.Slot == "HeadSlot")
             {
-                <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.GearId })</li>
+                <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
             }
         }
     </ul>
@@ -28,7 +28,7 @@
         {
             @if (gear.Slot == "ChestSlot")
             {
-                <li>@Html.DisplayFor(modelName => gear.Name)</li>
+                <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
             }
         }
     </ul>
@@ -39,7 +39,7 @@
         {
             @if (gear.Slot == "LegSlot")
             {
-                <li>@Html.DisplayFor(modelName => gear.Name)</li>
+                <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
             }
         }
     </ul>
@@ -50,7 +50,7 @@
         {
             @if (gear.Slot == "Boots")
             {
-                <li>@Html.DisplayFor(modelName => gear.Name)</li>
+                <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
             }
         }
     </ul>
@@ -61,7 +61,7 @@
         {
             @if (gear.Slot == "Gloves")
             {
-                <li>@Html.DisplayFor(modelName => gear.Name)</li>
+                <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
             }
         }
     </ul>
@@ -70,9 +70,9 @@
     <ul>
         @foreach (var gear in Model)
         {
-            @if (gear.Slot == "Cope")
+            @if (gear.Slot == "Cape")
             {
-                <li>@Html.DisplayFor(modelName => gear.Name)</li>
+                <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
             }
         }
     </ul>
@@ -83,7 +83,7 @@
         {
             @if (gear.Slot == "Necklace")
             {
-                <li>@Html.DisplayFor(modelName => gear.Name)</li>
+                <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
             }
         }
     </ul>
@@ -94,7 +94,7 @@
         {
             @if (gear.Slot == "Ring")
             {
-                <li>@Html.DisplayFor(modelName => gear.Name)</li>
+                <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
             }
         }
     </ul>
@@ -105,7 +105,7 @@
         {
             @if (gear.Slot == "MainHand")
             {
-                <li>@Html.DisplayFor(modelName => gear.Name)</li>
+                <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
             }
         }
     </ul>
@@ -116,10 +116,21 @@
         {
             @if (gear.Slot == "OffHand")
             {
-                <li>@Html.DisplayFor(modelName => gear.Name)</li>
+                <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
             }
         }
     </ul>
+
+    <h3>Spec Weapon</h3>
+        <ul>
+            @foreach (var gear in Model)
+            {
+                @if (gear.Slot == "SpecWeapon")
+                {
+                    <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
+                }
+            }
+        </ul>
 
     <h3>Arrow Slot</h3>
     <ul>
@@ -127,8 +138,10 @@
         {
             @if (gear.Slot == "ArrowSlot")
             {
-                <li>@Html.DisplayFor(modelName => gear.Name)</li>
+                <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
             }
         }
     </ul>
 }
+
+<p>@Html.ActionLink("Add Gear", "Create")</p>

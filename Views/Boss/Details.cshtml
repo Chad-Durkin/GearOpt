@@ -1,0 +1,13 @@
+﻿@model GearOptimizer.Models.Boss
+
+@{ 
+    ViewData["Title"] = "Boss Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    <h1>@Html.DisplayFor(modelName => Model.Name)</h1>
+</div>
+
+<h3>Attack Style: @Html.DisplayFor(modelAtkStyle => Model.AtkStyle)</h3>
+<h3>Weakness: @Html.DisplayFor(modelWeakness => Model.Weakness)</h3>

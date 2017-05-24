@@ -8,9 +8,10 @@ using GearOptimizer.Models;
 namespace GearOptimizer.Migrations
 {
     [DbContext(typeof(GearOptimizerDbContext))]
-    partial class GearOptimizerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170519033353_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")

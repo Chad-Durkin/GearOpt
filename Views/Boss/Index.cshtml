@@ -1,5 +1,19 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model IEnumerable<GearOptimizer.Models.Boss>
+
+@{ 
+    ViewData["Title"] = "Boss List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<div class="jumbotron">
+    <h1>Boss List</h1>
+</div>
+
+<ol>
+    @foreach (var boss in Model)
+    {
+        <li class="bossName"><strong>@Html.DisplayFor(modelName => boss.Name) </strong>@Html.ActionLink("Edit", "Edit", new { id = boss.Id }) | @Html.ActionLink("Delete", "Delete", new { id = boss.Id }) | @Html.ActionLink("Details", "Details", new { id = boss.Id })</li>
+    }
+</ol>
+
+<p>@Html.ActionLink("Add Boss", "Create")</p>
