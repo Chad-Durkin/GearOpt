@@ -28,6 +28,7 @@ namespace GearOptimizer.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
+            Gear.UpdatePrice(_db);
             return View(_db.Bosses.ToList());
         }
         

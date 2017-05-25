@@ -1,6 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace GearOptimizer.Models
 {
@@ -30,5 +35,34 @@ namespace GearOptimizer.Models
         public int Undead { get; set; }
         public int Slayer { get; set; }
         public virtual ICollection<FullSetGear> FullSetGears { get; set; }
+
+        public static void UpdatePrice(GearOptimizerDbContext _db)
+        {
+            Gear[] updatePrice = _db.Gears.ToArray();
+            for (var i = 0; i < updatePrice.Length; i++)
+            {
+                var id = Item.LoadJsonFindId(updatePrice[i].Name);
+                if (id != 0)
+                {
+                    //Grab the json object of the item
+                    var json = Item.GetPrices("/api/catalogue/detail.json?item=" + id).ToString();
+
+                    var data = (JObject)JsonConvert.DeserializeObject(json);
+
+                    string newPrice = data["item"]["current"]["price"].Value<string>();
+
+                    newPrice = newPrice.Replace("m", "00000");
+                    newPrice = newPrice.Replace("k", "00");
+                    newPrice = newPrice.Replace(".", "");
+
+                    //Update the price in the database
+                    updatePrice[i].Price = int.Parse(newPrice);
+
+                    _db.Entry(updatePrice[i]).State = EntityState.Modified;
+                }
+            }
+            _db.SaveChanges();
+        }
+
     }
 }

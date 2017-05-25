@@ -54,6 +54,7 @@
         var htmlString = "";
         var finalString = "";
 
+        //First AJAX call returns the single object arrays
         $.ajax({
             type: 'GET',
             url: url,
@@ -69,6 +70,8 @@
                     }
                 }
                 $(".bossName").html(bossName);
+
+                //Second AJAX call returns the join tables
                 $.ajax({
                     url: 'Home/GrabJoins',
                     type: 'GET',

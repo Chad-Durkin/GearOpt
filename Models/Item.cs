@@ -47,19 +47,6 @@ namespace GearOptimizer.Models
         {
             int itemId = 0;
             List<Item> items = new List<Item>();
-            //Generate Stream from a String
-            //MemoryStream stream = new MemoryStream();
-            //StreamWriter writer = new StreamWriter(stream);
-            //writer.Write("ItemInfo.json");
-            //writer.Flush();
-            //stream.Position = 0;
-
-            //Pass Stream made from String into StreamReader to grab JSON file
-            //using (StreamReader r = new StreamReader(stream))
-            //{
-            //    string json = r.ReadToEnd();
-            //    items = JsonConvert.DeserializeObject<List<Item>>(json);
-            //}
 
             string json = File.ReadAllText(@"C:\Users\chadd\Desktop\Projects\GearOptimizer\src\GearOptimizer\Resources\ItemInfo.json");
             items = JsonConvert.DeserializeObject<List<Item>>(json);
