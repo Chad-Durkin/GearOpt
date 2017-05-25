@@ -46,5 +46,18 @@ namespace GearOptimizer.Controllers
             };
             return Json(joinModel);
         }
+
+        public IActionResult GetPrice(string itemName)
+        {
+            var id = Item.LoadJsonFindId(itemName);
+            if(id != 0)
+            {
+                var result = Item.GetPrices("/api/catalogue/detail.json?item=" + id);
+                return Json(result);
+
+            }
+
+            return RedirectToAction("Index");
+        }
     }
 }

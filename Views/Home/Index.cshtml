@@ -5,11 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="jumbotron">
-    <h2>Old School RuneScape Gear Optimizer</h2>
-</div>
-
-<h2>Haven't Signed In? Do so @Html.ActionLink("here", "Index", "Account") and get started!</h2>
+@if (!User.Identity.IsAuthenticated)
+{
+    <h2>Haven't Signed In? Do so @Html.ActionLink("here", "Index", "Account") and get started!</h2>
+}
 <div class="row">
 
     @*Side Menu Links*@
@@ -51,8 +50,8 @@
         @*Current Prices Content*@
         <div class="currentPricesDisplay">
             <h1>Current Prices</h1>
-            <input class="form-control" name="searchQuery" id="searchQuery" placeholder="What item's price do you want to lookup?" />
-            <button id="get-games">Search Item</button>
+            <div class="priceInput"><input class="form-control" name="searchQuery" id="searchQuery" placeholder="What item's price do you want to lookup?" /></div>
+            <button id="get-items">Search Item</button>
             <div class="itemLookup">
 
             </div>
@@ -68,7 +67,7 @@
 
 
     </div>
-</div>'
+</div>
 @*Main Menu*@
 <div class="row homeMenuRow">
     <div class="col-md-12">

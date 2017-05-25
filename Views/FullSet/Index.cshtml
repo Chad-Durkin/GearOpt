@@ -9,6 +9,7 @@
     <h1>Full Set List</h1>
 </div>
 
+<div class="contentIndex">
 <ul>
     @foreach (var fullset in Model.FullSets)
     {
@@ -60,4 +61,5 @@
     }
 </ul>
 
-<p>@Html.ActionLink("Add FullSet", "Create")</p>
+<p class="addContent">@Html.ActionLink("Add FullSet", "Create")</p>
+</div>

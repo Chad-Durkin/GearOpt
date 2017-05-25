@@ -223,11 +223,13 @@ C:\Users\chadd\Desktop\Projects\GearOptimizer\src\GearOptimizer\Models\Applicati
 C:\Users\chadd\Desktop\Projects\GearOptimizer\src\GearOptimizer\Models\Boss.cs
 C:\Users\chadd\Desktop\Projects\GearOptimizer\src\GearOptimizer\Models\BossDrop.cs
 C:\Users\chadd\Desktop\Projects\GearOptimizer\src\GearOptimizer\Models\Drop.cs
+C:\Users\chadd\Desktop\Projects\GearOptimizer\src\GearOptimizer\Models\EnvironmentVariables.cs
 C:\Users\chadd\Desktop\Projects\GearOptimizer\src\GearOptimizer\Models\FullSet.cs
 C:\Users\chadd\Desktop\Projects\GearOptimizer\src\GearOptimizer\Models\FullSetBoss.cs
 C:\Users\chadd\Desktop\Projects\GearOptimizer\src\GearOptimizer\Models\FullSetGear.cs
 C:\Users\chadd\Desktop\Projects\GearOptimizer\src\GearOptimizer\Models\Gear.cs
 C:\Users\chadd\Desktop\Projects\GearOptimizer\src\GearOptimizer\Models\GearOptimizerDbContext.cs
+C:\Users\chadd\Desktop\Projects\GearOptimizer\src\GearOptimizer\Models\Item.cs
 C:\Users\chadd\Desktop\Projects\GearOptimizer\src\GearOptimizer\Models\Profile.cs
 C:\Users\chadd\Desktop\Projects\GearOptimizer\src\GearOptimizer\Models\ProfileFullSet.cs
 C:\Users\chadd\Desktop\Projects\GearOptimizer\src\GearOptimizer\ViewModels\FullSetViewModel.cs

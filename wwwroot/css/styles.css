@@ -1,44 +1,175 @@
-﻿body {
+﻿/*Set Background Image Until Template Is Made*/
+body {
     background-image: url('/../img/fan_art.jpg');
-    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    color: white;
+}
+/*Set Font For Input Boxes And Buttons To Be Visible*/
+input {
+    color: black;
+}
+
+button {
+    color: black;
+}
+
+.createDropDown {
+    background-color: #3F3529;  
+    color: #ECEC00;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-right: 70%;
+    padding-left: 5%;
+    border-style: solid;
+    border-width: 3px;
+}
+
+.dropdDown {
+    color: black;
+}
+/*Hide Bullet Points On Lists*/
+ul {
+    list-style-type: none;
+}
+
+ol {
+    list-style-type: none;
+}
+.ulBoss {
+    list-style-type: none;
+    padding-right: 10%;
 }
 
 .jumbotron {
     text-align: center;
+    background-color: #3F3529;
+    color: #ECEC00;
+    border-style: solid;
+    border-width: 3px;
 }
 
 .mainMenu {
     text-align: center;
+    background-color: #3F3529;
+    color: #ECEC00;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-style: solid;
+    border-width: 3px;
 }
 
 .sideMenuCol {
     display: none;
+    background-color: #3F3529;
+    color: #ECEC00;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-style: solid;
+    border-width: 3px;
 }
-
+/*Displayed content*/
 .displayCol {
     text-align: center;
 }
-
+/*Boss*/
 .bossDisplay {
     display: none;
+    background-color: #3F3529;
+    color: #ECEC00;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-style: solid;
+    border-width: 3px;
+}
+
+.bossGearDisplay {
+    display: none;
+    background-color: #3F3529;
+    color: #ECEC00;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-style: solid;
+    border-width: 3px;
+}
+
+.gearSetNameDisplay {
+    color: white;
+}
+
+.gearContent {
+    padding-left: 10%;
 }
 
 .bossGearSets {
     display: none;
 }
-
+/*Current Prices*/
 .currentPricesDisplay {
     display: none;
+    background-color: #3F3529;
+    color: #ECEC00;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-style: solid;
+    border-width: 3px;
 }
 
+.priceInput {
+    width: 80%;
+    align-content: center;
+    padding-left: 20%;
+    padding-bottom: 2%;
+}
+/*Saved Gear Sets*/
 .savedGearDisplay {
     display: none;
+    background-color: #3F3529;
+    color: #ECEC00;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-style: solid;
+    border-width: 3px;
+}
+/*Account Register Page*/
+.accountRegister {
+    background-color: #3F3529;
+    color: #ECEC00;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-style: solid;
+    border-width: 3px;
+    text-align: center;
+    font-size: 35px;
+}
+/*Crud Page Design*/
+.contentIndex {
+    background-color: #3F3529;
+    color: #ECEC00;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-style: solid;
+    border-width: 3px;
 }
 
-.ulBoss {
-    list-style-type: none;
-}
-
-.bossGearSets {
-    display: none;
+.addContent {
+    padding-left: 20%;
+    background-color: white;
+    margin-right: 30%;
+    margin-left: 10%;
 }

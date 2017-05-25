@@ -9,139 +9,144 @@
     <h1>Gear List</h1>
 </div>
 
-@if (Model.Any())
-{
-    <h3>Head Slot</h3>
-    <ul>
-        @foreach (var gear in Model)
-        {
-            @if (gear.Slot == "HeadSlot")
-            {
-                <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
-            }
-        }
-    </ul>
-
-    <h3>Chest Slot</h3>
-    <ul>
-        @foreach (var gear in Model)
-        {
-            @if (gear.Slot == "ChestSlot")
-            {
-                <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
-            }
-        }
-    </ul>
-
-    <h3>Leg Slot</h3>
-    <ul>
-        @foreach (var gear in Model)
-        {
-            @if (gear.Slot == "LegSlot")
-            {
-                <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
-            }
-        }
-    </ul>
-
-    <h3>Boots</h3>
-    <ul>
-        @foreach (var gear in Model)
-        {
-            @if (gear.Slot == "Boots")
-            {
-                <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
-            }
-        }
-    </ul>
-
-    <h3>Gloves</h3>
-    <ul>
-        @foreach (var gear in Model)
-        {
-            @if (gear.Slot == "Gloves")
-            {
-                <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
-            }
-        }
-    </ul>
-
-    <h3>Cape</h3>
-    <ul>
-        @foreach (var gear in Model)
-        {
-            @if (gear.Slot == "Cape")
-            {
-                <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
-            }
-        }
-    </ul>
-
-    <h3>Necklace</h3>
-    <ul>
-        @foreach (var gear in Model)
-        {
-            @if (gear.Slot == "Necklace")
-            {
-                <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
-            }
-        }
-    </ul>
-
-    <h3>Ring</h3>
-    <ul>
-        @foreach (var gear in Model)
-        {
-            @if (gear.Slot == "Ring")
-            {
-                <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
-            }
-        }
-    </ul>
-
-    <h3>Main Hand</h3>
-    <ul>
-        @foreach (var gear in Model)
-        {
-            @if (gear.Slot == "MainHand")
-            {
-                <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
-            }
-        }
-    </ul>
-
-    <h3>Off Hand</h3>
-    <ul>
-        @foreach (var gear in Model)
-        {
-            @if (gear.Slot == "OffHand")
-            {
-                <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
-            }
-        }
-    </ul>
-
-    <h3>Spec Weapon</h3>
-        <ul>
-            @foreach (var gear in Model)
-            {
-                @if (gear.Slot == "SpecWeapon")
+<div class="contentIndex">
+    @if (Model.Any())
+    {
+        <div class="gearContent">
+            <h3>Head Slot</h3>
+            <ul>
+                @foreach (var gear in Model)
                 {
-                    <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
+                    @if (gear.Slot == "HeadSlot")
+                    {
+                        <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
+                    }
                 }
-            }
-        </ul>
+            </ul>
 
-    <h3>Arrow Slot</h3>
-    <ul>
-        @foreach (var gear in Model)
-        {
-            @if (gear.Slot == "ArrowSlot")
-            {
-                <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
-            }
-        }
-    </ul>
-}
+            <h3>Chest Slot</h3>
+            <ul>
+                @foreach (var gear in Model)
+                {
+                    @if (gear.Slot == "ChestSlot")
+                    {
+                        <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
+                    }
+                }
+            </ul>
 
-<p>@Html.ActionLink("Add Gear", "Create")</p>
+            <h3>Leg Slot</h3>
+            <ul>
+                @foreach (var gear in Model)
+                {
+                    @if (gear.Slot == "LegSlot")
+                    {
+                        <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
+                    }
+                }
+            </ul>
+
+            <h3>Boots</h3>
+            <ul>
+                @foreach (var gear in Model)
+                {
+                    @if (gear.Slot == "Boots")
+                    {
+                        <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
+                    }
+                }
+            </ul>
+
+            <h3>Gloves</h3>
+            <ul>
+                @foreach (var gear in Model)
+                {
+                    @if (gear.Slot == "Gloves")
+                    {
+                        <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
+                    }
+                }
+            </ul>
+
+            <h3>Cape</h3>
+            <ul>
+                @foreach (var gear in Model)
+                {
+                    @if (gear.Slot == "Cape")
+                    {
+                        <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
+                    }
+                }
+            </ul>
+
+            <h3>Necklace</h3>
+            <ul>
+                @foreach (var gear in Model)
+                {
+                    @if (gear.Slot == "Necklace")
+                    {
+                        <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
+                    }
+                }
+            </ul>
+
+            <h3>Ring</h3>
+            <ul>
+                @foreach (var gear in Model)
+                {
+                    @if (gear.Slot == "Ring")
+                    {
+                        <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
+                    }
+                }
+            </ul>
+
+            <h3>Main Hand</h3>
+            <ul>
+                @foreach (var gear in Model)
+                {
+                    @if (gear.Slot == "MainHand")
+                    {
+                        <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
+                    }
+                }
+            </ul>
+
+            <h3>Off Hand</h3>
+            <ul>
+                @foreach (var gear in Model)
+                {
+                    @if (gear.Slot == "OffHand")
+                    {
+                        <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
+                    }
+                }
+            </ul>
+
+            <h3>Spec Weapon</h3>
+                <ul>
+                    @foreach (var gear in Model)
+                    {
+                        @if (gear.Slot == "SpecWeapon")
+                        {
+                            <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
+                        }
+                    }
+                </ul>
+
+            <h3>Arrow Slot</h3>
+            <ul>
+                @foreach (var gear in Model)
+                {
+                    @if (gear.Slot == "ArrowSlot")
+                    {
+                        <li>@Html.DisplayFor(modelName => gear.Name) | @Html.ActionLink("Edit", "Edit", new { id = gear.Id }) | @Html.ActionLink("Delete", "Delete", new { id = gear.Id }) | @Html.ActionLink("Details", "Details", new { id = gear.Id })</li>
+                    }
+                }
+            </ul>
+        </div>
+    }
+
+    <p class="addContent">@Html.ActionLink("Add Gear", "Create")</p>
+
+</div>

@@ -5,51 +5,53 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<div class="createDropDown">
+    @using (Html.BeginForm())
+    {
+        @Html.LabelFor(m => m.SetName)
+        <div class"dropdDown">@Html.TextBoxFor(m => m.SetName)
+    </div>
+        <br />
+        @Html.LabelFor(m => m.HeadSlotId)
+        <div class="dropdDown">@Html.DropDownList("HeadSlotId")</div>
+        <br />
+        @Html.LabelFor(m => m.ChestSlotId)
+        <div class="dropdDown">@Html.DropDownList("ChestSlotId")</div>
+        <br />
+        @Html.LabelFor(m => m.LegSlotId)
+        <div class="dropdDown">@Html.DropDownList("LegSlotId")</div>
+        <br />
+        @Html.LabelFor(m => m.BootsId)
+        <div class="dropdDown">@Html.DropDownList("BootsId")</div>
+        <br />
+        @Html.LabelFor(m => m.GlovesId)
+        <div class="dropdDown">@Html.DropDownList("GlovesId")</div>
+        <br />
+        @Html.LabelFor(m => m.CapeId)
+        <div class="dropdDown">@Html.DropDownList("CapeId")</div>
+        <br />
+        @Html.LabelFor(m => m.NecklaceId)
+        <div class="dropdDown">@Html.DropDownList("NecklaceId")</div>
+        <br />
+        @Html.LabelFor(m => m.RingId)
+        <div class="dropdDown">@Html.DropDownList("RingId")</div>
+        <br />
+        @Html.LabelFor(m => m.ArrowSlotId)
+        <div class="dropdDown">@Html.DropDownList("ArrowSlotId")</div>
+        <br />
+        @Html.LabelFor(m => m.MainHandId)
+        <div class="dropdDown">@Html.DropDownList("MainHandId")</div>
+        <br />
+        @Html.LabelFor(m => m.OffHandId)
+        <div class="dropdDown">@Html.DropDownList("OffHandId")</div>
+        <br />
+        @Html.LabelFor(m => m.SpecWeaponId)
+        <div class="dropdDown">@Html.DropDownList("SpecWeaponId")</div>
+        <br />
+        @Html.LabelFor(m => m.BossId)
+        <div class="dropdDown">@Html.DropDownList("BossId")</div>
+        <br />
 
-@using (Html.BeginForm())
-{
-    @Html.LabelFor(m => m.SetName)
-    @Html.TextBoxFor(m => m.SetName)
-    <br />
-    @Html.LabelFor(m => m.HeadSlotId)
-    @Html.DropDownList("HeadSlotId")
-    <br />
-    @Html.LabelFor(m => m.ChestSlotId)
-    @Html.DropDownList("ChestSlotId")
-    <br />
-    @Html.LabelFor(m => m.LegSlotId)
-    @Html.DropDownList("LegSlotId")
-    <br />
-    @Html.LabelFor(m => m.BootsId)
-    @Html.DropDownList("BootsId")
-    <br />
-    @Html.LabelFor(m => m.GlovesId)
-    @Html.DropDownList("GlovesId")
-    <br />
-    @Html.LabelFor(m => m.CapeId)
-    @Html.DropDownList("CapeId")
-    <br />
-    @Html.LabelFor(m => m.NecklaceId)
-    @Html.DropDownList("NecklaceId")
-    <br />
-    @Html.LabelFor(m => m.RingId)
-    @Html.DropDownList("RingId")
-    <br />
-    @Html.LabelFor(m => m.ArrowSlotId)
-    @Html.DropDownList("ArrowSlotId")
-    <br />
-    @Html.LabelFor(m => m.MainHandId)
-    @Html.DropDownList("MainHandId")
-    <br />
-    @Html.LabelFor(m => m.OffHandId)
-    @Html.DropDownList("OffHandId")
-    <br />
-    @Html.LabelFor(m => m.SpecWeaponId)
-    @Html.DropDownList("SpecWeaponId")
-    <br />
-    @Html.LabelFor(m => m.BossId)
-    @Html.DropDownList("BossId")
-    <br />
-
-    <input type="submit" value="Set FullSet" />
-}
+        <input type="submit" value="Set FullSet" />
+    }
+</div>

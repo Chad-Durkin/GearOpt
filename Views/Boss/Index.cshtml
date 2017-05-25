@@ -8,7 +8,7 @@
 <div class="jumbotron">
     <h1>Boss List</h1>
 </div>
-
+<div class="contentIndex">
 <ol>
     @foreach (var boss in Model)
     {
@@ -16,4 +16,5 @@
     }
 </ol>
 
-<p>@Html.ActionLink("Add Boss", "Create")</p>
+<p class="addContent">@Html.ActionLink("Add Boss", "Create")</p>
+</div>
